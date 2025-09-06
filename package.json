@@ -4,13 +4,18 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "rm -rf target types && tsc",
+    "start": "node target",
+    "test": "c8 mocha test/**/*.{ts,tsx}",
+    "watch": "tsc --watch --preserveWatchOutput"
   },
   "keywords": [],
   "author": "Grzegorz Abramczyk <abramczykg@gmail.com>",
   "license": "MIT",
   "packageManager": "pnpm@10.13.1",
-  "dependencies": {
-    "prettier": "^3.6.2"
+  "devDependencies": {
+    "@types/node": "^24.3.1",
+    "prettier": "^3.6.2",
+    "typescript": "^5.9.2"
   }
 }
