@@ -12,5 +12,17 @@ describe('ytd', () => {
       await createWriteOutput(writeFile)('path/to/file.txt', 'file content', 'skip')
       expect(writeFile).to.have.been.calledOnceWithExactly('path/to/file.txt', 'file content', { flag: 'wx' })
     })
+    it('should not overwrite existing file with skip mode', async () => {
+      const writeFile = sinon.stub().rejects({ code: 'EEXIST' })
+      await expect(createWriteOutput(writeFile)('path/to/file.txt', 'file content', 'skip')).to.be.fulfilled
+      expect(writeFile).to.have.been.calledOnceWithExactly('path/to/file.txt', 'file content', { flag: 'wx' })
+    })
+    it('should propagate other errors with skip mode', async () => {
+      const writeFile = sinon.stub().rejects(new Error('Some error'))
+      await expect(createWriteOutput(writeFile)('path/to/file.txt', 'file content', 'skip')).to.be.rejectedWith(
+        'Some error'
+      )
+      expect(writeFile).to.have.been.calledOnceWithExactly('path/to/file.txt', 'file content', { flag: 'wx' })
+    })
   })
 })
