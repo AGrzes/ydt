@@ -1,0 +1,5 @@
+- path: sample.txt
+  template:
+    content: |
+      This is a sample file.
+      Hello {{name}}
