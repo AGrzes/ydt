@@ -2,8 +2,10 @@ import { readFile, writeFile } from 'fs/promises'
 import Handlebars from 'handlebars'
 import yaml from 'yaml'
 import { FileGenerationConfig } from './model.js'
+import { createWriteOutput } from './write-output.js'
 
 const handlebars = Handlebars.create()
+const writeOutput = createWriteOutput(writeFile)
 
 async function generate(configPath: string, context: Record<string, any> = {}): Promise<void> {
   const configText = handlebars.compile(await readFile(configPath, 'utf-8'))(context)
@@ -16,19 +18,7 @@ async function generate(configPath: string, context: Record<string, any> = {}): 
           : await readFile(fileConfig.template.path, 'utf-8')
       const compiled = handlebars.compile(template)
       const output = compiled({ ...context, ...fileConfig.context })
-      switch (fileConfig.mergeMode) {
-        case 'skip':
-          try {
-            await writeFile(fileConfig.path, output, { flag: 'wx' })
-          } catch (e: any) {
-            if (e.code !== 'EEXIST') throw e
-          }
-          break
-        case 'overwrite':
-        default:
-          await writeFile(fileConfig.path, output)
-          break
-      }
+      await writeOutput(fileConfig.path, output, fileConfig.mergeMode)
     })
   )
 }
