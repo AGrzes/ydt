@@ -8,3 +8,5 @@ export interface FileGenerationConfig {
   context?: Record<string, any>
   mergeMode?: MergeMode
 }
+
+export type TemplatingEngine = (template: string, context: Record<string, any>) => string
