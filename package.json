@@ -48,6 +48,7 @@
     "typescript": "^5.9.2"
   },
   "dependencies": {
-    "handlebars": "^4.7.8"
+    "handlebars": "^4.7.8",
+    "yaml": "^2.8.1"
   }
 }
