@@ -24,5 +24,15 @@ describe('ytd', () => {
       )
       expect(writeFile).to.have.been.calledOnceWithExactly('path/to/file.txt', 'file content', { flag: 'wx' })
     })
+    it('should overwrite existing file with overwrite mode', async () => {
+      const writeFile = sinon.stub().resolves()
+      await createWriteOutput(writeFile)('path/to/file.txt', 'file content', 'overwrite')
+      expect(writeFile).to.have.been.calledOnceWithExactly('path/to/file.txt', 'file content')
+    })
+    it('should overwrite existing file with default mode', async () => {
+      const writeFile = sinon.stub().resolves()
+      await createWriteOutput(writeFile)('path/to/file.txt', 'file content', 'unknown' as any)
+      expect(writeFile).to.have.been.calledOnceWithExactly('path/to/file.txt', 'file content')
+    })
   })
 })
