@@ -1,8 +1,8 @@
 {
-  "name": "@agrzes/ydt",
+  "name": "@agrzes/ydt-cli",
   "version": "1.0.0",
   "description": "",
-  "main": "target/index.js",
+  "main": "index.js",
   "scripts": {
     "build": "rm -rf target types && tsc",
     "start": "node target",
@@ -20,7 +20,6 @@
       ]
     }
   },
-  "types": "types/index.d.ts",
   "keywords": [],
   "author": "Grzegorz Abramczyk <abramczykg@gmail.com>",
   "license": "MIT",
@@ -42,7 +41,8 @@
     "vitest": "^3.2.4"
   },
   "dependencies": {
-    "handlebars": "^4.7.8",
+    "commander": "^14.0.0",
+    "@agrzes/ydt": "workspace:^",
     "yaml": "^2.8.1"
   }
 }

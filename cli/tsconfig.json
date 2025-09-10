@@ -13,10 +13,12 @@
     "skipLibCheck": true,
     "moduleResolution": "Node"
   },
-  "include": ["src"],
+  "include": [
+    "src"
+  ],
   "ts-node": {
     "moduleTypes": {
-      "*.ts": "cjs"
-    }
+        "*.ts": "cjs"
+    } 
   }
 }

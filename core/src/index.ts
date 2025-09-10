@@ -1,16 +1,5 @@
-/* v8 ignore start */
-import { readFile, writeFile } from 'fs/promises'
-import { createFlow } from './flow.js'
-import { createProgram } from './program.js'
-import { createResolveTemplate } from './resolve-template.js'
-import { createTemplatingEngine } from './templating-engine.js'
-import { createWriteOutput } from './write-output.js'
-
-const writeOutput = createWriteOutput(writeFile)
-const resolveTemplate = createResolveTemplate((path) => readFile(path, 'utf-8'))
-const templateEngine = createTemplatingEngine()
-const generate = createFlow(templateEngine, resolveTemplate, writeOutput)
-
-const program = createProgram(generate)
-
-await program.parseAsync(process.argv)
+export { createFlow } from './flow.js'
+export * from './model.js'
+export { createResolveTemplate } from './resolve-template.js'
+export { createTemplatingEngine } from './templating-engine.js'
+export { createWriteOutput } from './write-output.js'

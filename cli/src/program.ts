@@ -1,6 +1,6 @@
+import { Flow } from '@agrzes/ydt/src/model.js'
 import { Command } from 'commander'
 import yaml from 'yaml'
-import { Flow } from './model.js'
 
 export function createProgram(generate: Flow) {
   const program = new Command()
