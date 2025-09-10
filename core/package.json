@@ -1,9 +1,10 @@
 {
   "name": "@agrzes/ydt",
-  "version": "1.0.0",
+  "version": "1.0.0-alpha1",
   "description": "Two phase templating using handlebars to configure generation of files also using handlebars. Core module for programmatic use.",
   "main": "target/index.js",
   "scripts": {
+    "prepublishOnly": "pnpm install --frozen-lockfile && pnpm build && pnpm test",
     "build": "rm -rf target types && tsc",
     "start": "node target",
     "test": "vitest run",

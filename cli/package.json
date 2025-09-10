@@ -4,6 +4,7 @@
   "description": "Two phase templating using handlebars to configure generation of files also using handlebars. CLI module.",
   "main": "index.js",
   "scripts": {
+    "prepublishOnly": "pnpm install --frozen-lockfile && pnpm build && pnpm test",
     "build": "rm -rf target types && tsc",
     "start": "node target",
     "test": "vitest run",
