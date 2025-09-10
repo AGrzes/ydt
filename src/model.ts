@@ -14,3 +14,5 @@ export type TemplatingEngine = (template: string, context: Record<string, any>) 
 export type WriteOutput = (path: string, content: string, mergeMode: MergeMode) => Promise<void>
 
 export type ResolveTemplate = (config: TemplateConfig, options?: { basePath?: string }) => Promise<string>
+
+export type Flow = (configPath: string, context?: Record<string, any>) => Promise<void>
