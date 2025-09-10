@@ -64,5 +64,8 @@
     "bin",
     "target",
     "types"
-  ]
+  ],
+  "publishConfig": {
+    "access": "public"
+  }
 }
