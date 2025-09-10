@@ -1,4 +1,4 @@
 packages:
   - 'core'
   - 'cli'
-publish-branch: develop
+publishBranch: develop
