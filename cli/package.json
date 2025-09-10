@@ -1,7 +1,7 @@
 {
   "name": "@agrzes/ydt-cli",
   "version": "1.0.0",
-  "description": "",
+  "description": "Two phase templating using handlebars to configure generation of files also using handlebars. CLI module.",
   "main": "index.js",
   "scripts": {
     "build": "rm -rf target types && tsc",
@@ -20,7 +20,12 @@
       ]
     }
   },
-  "keywords": [],
+  "keywords": [
+    "cli",
+    "templating",
+    "handlebars",
+    "yaml"
+  ],
   "author": "Grzegorz Abramczyk <abramczykg@gmail.com>",
   "license": "MIT",
   "packageManager": "pnpm@10.13.1",
@@ -44,5 +49,19 @@
     "commander": "^14.0.0",
     "@agrzes/ydt": "workspace:^",
     "yaml": "^2.8.1"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AGrzes/ydt.git",
+    "directory": "cli"
+  },
+  "bugs": {
+    "url": "https://github.com/AGrzes/ydt/issues"
+  },
+  "homepage": "https://github.com/AGrzes/ydt",
+  "files": [
+    "bin",
+    "target",
+    "types"
+  ]
 }
