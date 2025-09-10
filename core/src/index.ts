@@ -1,7 +1,7 @@
 /* v8 ignore start */
 import { readFile, writeFile } from 'fs/promises'
-import { createProgram } from './command.js'
 import { createFlow } from './flow.js'
+import { createProgram } from './program.js'
 import { createResolveTemplate } from './resolve-template.js'
 import { createTemplatingEngine } from './templating-engine.js'
 import { createWriteOutput } from './write-output.js'
