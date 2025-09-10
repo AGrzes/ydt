@@ -1,7 +1,7 @@
 import { join } from 'path'
-import { TemplateConfig } from './model.js'
+import { ResolveTemplate, TemplateConfig } from './model.js'
 
-export function createResolveTemplate(lookupFile: (path: string) => Promise<string>) {
+export function createResolveTemplate(lookupFile: (path: string) => Promise<string>): ResolveTemplate {
   return async function resolveTemplate(config: TemplateConfig, options?: { basePath?: string }): Promise<string> {
     if ('content' in config) {
       return config.content

@@ -1,7 +1,7 @@
 import fs from 'fs/promises'
-import { MergeMode } from './model.js'
+import { MergeMode, WriteOutput } from './model.js'
 
-export function createWriteOutput(writeFile: typeof fs.writeFile) {
+export function createWriteOutput(writeFile: typeof fs.writeFile): WriteOutput {
   return async function writeOutput(path: string, content: string, mergeMode: MergeMode): Promise<void> {
     switch (mergeMode) {
       case 'skip':

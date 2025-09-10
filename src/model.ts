@@ -10,3 +10,7 @@ export interface FileGenerationConfig {
 }
 
 export type TemplatingEngine = (template: string, context: Record<string, any>) => string
+
+export type WriteOutput = (path: string, content: string, mergeMode: MergeMode) => Promise<void>
+
+export type ResolveTemplate = (config: TemplateConfig, options?: { basePath?: string }) => Promise<string>
