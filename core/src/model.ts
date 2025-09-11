@@ -16,3 +16,7 @@ export type WriteOutput = (path: string, content: string, mergeMode: MergeMode) 
 export type ResolveTemplate = (config: TemplateConfig, options?: { basePath?: string }) => Promise<string>
 
 export type Flow = (configPath: string, context?: Record<string, any>) => Promise<void>
+
+export type LookupFile = (path: string) => Promise<string>
+
+export type StoreFile = (path: string, content: string) => Promise<void>
