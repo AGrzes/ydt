@@ -3,6 +3,9 @@
   "version": "1.0.0-alpha.0",
   "description": "Two phase templating using handlebars to configure generation of files also using handlebars. CLI module.",
   "main": "index.js",
+  "bin": {
+    "ydt": "./bin/ydt.mjs"
+  },
   "scripts": {
     "prepublishOnly": "pnpm install --frozen-lockfile && pnpm build && pnpm test",
     "build": "rm -rf target types && tsc",
