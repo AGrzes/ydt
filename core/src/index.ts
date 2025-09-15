@@ -1,4 +1,5 @@
 export { createFlow } from './flow.js'
+export { BUILTIN_HELPERS } from './helpers/index.js'
 export * from './model.js'
 export { createResolveTemplate } from './resolve-template.js'
 export { createTemplatingEngine } from './templating-engine.js'

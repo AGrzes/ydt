@@ -1,7 +1,7 @@
 import { json } from './json.js'
 import { yaml } from './yaml.js'
 
-export const helpers = {
+export const BUILTIN_HELPERS = {
   json,
   yaml,
 }
