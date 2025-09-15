@@ -11,5 +11,12 @@ describe('ytd', () => {
       const result = templateEngine('Hello {{name}}', { name: 'World' })
       expect(result).to.equal('Hello World')
     })
+    it('should register helpers', () => {
+      const templateEngine = createTemplatingEngine({
+        shout: (text: string) => text.toUpperCase(),
+      })
+      const result = templateEngine('Hello {{shout name}}', { name: 'World' })
+      expect(result).to.equal('Hello WORLD')
+    })
   })
 })
