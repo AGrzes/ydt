@@ -6,10 +6,10 @@ import {
   createTemplatingEngine,
   createWriteOutput,
 } from '@agrzes/ydt'
-import { readFile, writeFile } from 'fs/promises'
+import fs, { readFile } from 'fs/promises'
 import { createProgram } from './program.js'
 
-const writeOutput = createWriteOutput(writeFile)
+const writeOutput = createWriteOutput(fs)
 const resolveTemplate = createResolveTemplate((path) => readFile(path, 'utf-8'))
 const templateEngine = createTemplatingEngine(BUILTIN_HELPERS)
 const generate = createFlow(templateEngine, resolveTemplate, writeOutput)
