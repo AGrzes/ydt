@@ -10,7 +10,11 @@ describe('ytd', () => {
   describe('program', () => {
     it('should run program with given config and context', async () => {
       const generate = sinon.stub().resolves()
-      const program = createProgram(generate)
+      const cwo = sinon.stub()
+      const crt = sinon.stub()
+      const cte = sinon.stub()
+      const cf = sinon.stub().returns(generate)
+      const program = createProgram(cwo, crt, cte, cf)
       program.exitOverride(() => {
         throw new Error('process.exit called')
       })
@@ -24,7 +28,11 @@ describe('ytd', () => {
     })
     it('should throw error when no config path is provided', async () => {
       const generate = sinon.stub().resolves()
-      const program = createProgram(generate)
+      const cwo = sinon.stub()
+      const crt = sinon.stub()
+      const cte = sinon.stub()
+      const cf = sinon.stub().returns(generate)
+      const program = createProgram(cwo, crt, cte, cf)
       program.exitOverride(() => {
         throw new Error('process.exit called')
       })
