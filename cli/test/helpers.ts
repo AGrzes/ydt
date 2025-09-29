@@ -12,5 +12,17 @@ describe('ytd', () => {
       expect(helpers).to.have.property('yaml')
       expect(helpers).to.have.property('json')
     })
+    it('should initialize with additional helpers from js file', async () => {
+      const helpers = await initHelpers(['test/helpers/sample.js'])
+      expect(helpers).to.have.property('yaml')
+      expect(helpers).to.have.property('json')
+      expect(helpers).to.have.property('sampleJs')
+    })
+    it('should initialize with additional helpers from ts file', async () => {
+      const helpers = await initHelpers(['test/helpers/sample.ts'])
+      expect(helpers).to.have.property('yaml')
+      expect(helpers).to.have.property('json')
+      expect(helpers).to.have.property('sampleTs')
+    })
   })
 })
