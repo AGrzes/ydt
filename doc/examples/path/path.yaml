@@ -1,0 +1,3 @@
+- path: sample.txt
+  template:
+    path: sample.txt.handlebars
