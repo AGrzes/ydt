@@ -1,4 +1,4 @@
-CLI Package for [@agrze/ydt]() templating package.
+CLI Package for [@agrze/ydt](https://www.npmjs.com/package/@agrzes/ydt) templating package.
 
 # Usage
 
@@ -10,3 +10,5 @@ ydt [config-file]
 
 It generates files defined by the config file using data from stdin.
 The data are parsed as YAML but JSON as subset of YAML is also supported.
+
+See [tutorial](https://github.com/AGrzes/ydt/blob/develop/doc/tutorial.md) for more information.
