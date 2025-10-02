@@ -7,5 +7,7 @@ It works in two phases.
 It allows to easily turn JSON/YAML data into a set of files using templates.
 
 This [package](https://www.npmjs.com/package/@agrzes/ydt) contains core functionality meant to be used programmatically.
+
 For CLI usage see [cli package](https://www.npmjs.com/package/@agrzes/ydt-cli).
+
 API documentation can be found in [here](https://github.com/AGrzes/ydt/blob/develop/doc/api.md).
