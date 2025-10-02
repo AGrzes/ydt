@@ -58,7 +58,7 @@ But other constructs of handlebars can be used as well. For example iterating ov
 With config.yaml:
 
 ```yaml
-{{#each names as |name}}
+{{#each names as |name|}}
 - path: "sample-{{@index}}.txt"
   template:
     content: |
@@ -98,7 +98,8 @@ With config.yaml:
 and sample.txt.handlebars:
 
 ```handlebars
-This is a sample file. Hello {{name}}
+This is a sample file. 
+Hello {{name}}
 ```
 
 runing
