@@ -1,6 +1,6 @@
 {
   "name": "@agrzes/ydt-cli",
-  "version": "1.0.0-alpha.1",
+  "version": "1.0.0-alpha.2",
   "description": "Two phase templating using handlebars to configure generation of files also using handlebars. CLI module.",
   "main": "index.js",
   "bin": {
