@@ -65,8 +65,7 @@
   "homepage": "https://github.com/AGrzes/ydt",
   "files": [
     "bin",
-    "target",
-    "types"
+    "target"
   ],
   "publishConfig": {
     "access": "public"
