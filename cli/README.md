@@ -1,4 +1,4 @@
-CLI Package for [@agrze/ydt](https://www.npmjs.com/package/@agrzes/ydt) templating package.
+CLI Package for [@agrzes/ydt](https://www.npmjs.com/package/@agrzes/ydt) templating package.
 
 # Usage
 
